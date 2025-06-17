@@ -1,0 +1,50 @@
+@theme static {
+  --spacing-header-height: 96px;
+
+  --font-manrope: "Manrope", "sans-serif";
+
+  /* --color-*: initial; */
+  --color-primary: "#D87D4A";
+  --color-primary-soft: "#FBAF85";
+  /* --color-black: "#000000"; */
+  --color-dark: "#101010";
+  --color-lightGray: "#F1F1F1";
+  --color-extraLight: "#FAFAFA";
+  /* --color-whitish: "#FFFFFF"; */
+  --color-error: "#CD2C2C";
+
+  --text-h1: 56px;
+  --text-h1--line-height: 58px;
+  --text-h1--tracking: 2px;
+
+  --text-h2: 40px;
+  --text-h2--line-height: 44px;
+  --text-h2--tracking: 1.5px;
+
+  --text-h3: 32px;
+  --text-h3--line-height: 36px;
+  --text-h3--tracking: 1.15px;
+
+  --text-h4: 28px;
+  --text-h4--line-height: 38px;
+  --text-h4--tracking: 2px;
+
+  --text-h5: 24px;
+  --text-h5--line-height: 33px;
+  --text-h5--tracking: 1.7px;
+
+  --text-h6: 18px;
+  --text-h6--line-height: 24px;
+  --text-h6--tracking: 1.3px;
+
+  --text-body: 15px;
+  --text-body--line-height: 25px;
+
+  --text-overline: 14px;
+  --text-overline--line-height: 19px;
+  --text-overline--tracking: 10px;
+
+  --text-sub: 13px;
+  --text-sub--line-height: 25px;
+  --text-sub--tracking: 1px;
+}
