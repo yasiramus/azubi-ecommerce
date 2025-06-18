@@ -93,3 +93,5 @@ pnpm run dev
 ## 🏁 Final Notes
 
 This project was built with care and focus to meet the assessment requirements and showcase my frontend skills in a practical, user-friendly, and scalable way. Looking forward to the next phase of the Azubi Talent Mobility journey! 💼✨
+
+<!-- yasira -->

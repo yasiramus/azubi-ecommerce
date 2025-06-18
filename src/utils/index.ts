@@ -12,7 +12,6 @@ export const tabs = [
   { name: "Earphones", path: "earphones" }
 ]
 
-
 export const social_media = [
   { name: "Facebook", icon: Facebook, link: "#" },
   { name: "Twitter", icon: Twitter, link: "#" },

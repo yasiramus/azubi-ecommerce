@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Minus, Plus } from "lucide-react";
 
 import Button from "../ui/Button";
@@ -10,6 +11,7 @@ export interface CartItemProps {
   image: string;
   price: number;
   quantity: number;
+  checkout?: boolean;
 }
 
 export default function Item({
@@ -18,11 +20,17 @@ export default function Item({
   image,
   price,
   quantity,
+  checkout,
 }: CartItemProps) {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="flex items-center justify-between">
+    <div
+      className={clsx(
+        "flex items-center justify-between",
+        checkout ? "gap-x-28" : ""
+      )}
+    >
       <div className="flex items-center gap-4">
         <img
           src={image}
@@ -34,34 +42,39 @@ export default function Item({
           <p className="text-gray-500 leading-none mt-1">${price}</p>
         </div>
       </div>
-
-      <div className="flex items-center gap-x-1 bg-[#F1F1F1] rounded-md">
-        <Button
-          variant="transparent"
-          className="!px-4"
-          onClick={() => dispatch(decreaseQuantity(id))}
-        >
-          <Minus className="w-4 h-4 text-black" />
-        </Button>
-        <span className="text-black font-medium text-sm">{quantity}</span>
-        <Button
-          variant="transparent"
-          className="!px-4"
-          onClick={() =>
-            dispatch(
-              addToCart({
-                id,
-                name,
-                price,
-                image,
-                quantity: 1,
-              })
-            )
-          }
-        >
-          <Plus className="w-4 h-4 text-black" />
-        </Button>
-      </div>
+      {checkout ? (
+        <div className="text-sm text-gray-500 font-bold px-3 mx-auto">
+          x{quantity}
+        </div>
+      ) : (
+        <div className="flex items-center gap-x-1 bg-[#F1F1F1] rounded-md">
+          <Button
+            variant="transparent"
+            className="!px-4"
+            onClick={() => dispatch(decreaseQuantity(id))}
+          >
+            <Minus className="w-4 h-4 text-black hover:text-[#D87D4A]" />
+          </Button>
+          <span className="text-black font-medium text-sm">{quantity}</span>
+          <Button
+            variant="transparent"
+            className="!px-4"
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  id,
+                  name,
+                  price,
+                  image,
+                  quantity: 1,
+                })
+              )
+            }
+          >
+            <Plus className="w-4 h-4 text-black hover:text-[#D87D4A]" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

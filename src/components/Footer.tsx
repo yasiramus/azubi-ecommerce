@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { tabs, social_media } from "../utils";
 
 import Logo from "./Logo";
+import { NavLin } from "./Navbar";
 
 export default function Footer() {
   return (
@@ -10,17 +11,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Logo + Nav */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
-         <Logo/>
+          <Logo />
 
           <nav className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm uppercase tracking-widest font-medium">
-            {tabs.map((tab, index) => (
-              <Link
-                key={index}
-                to={tab.path}
-                className="hover:text-[#D87D4A] transition"
-              >
-                {tab.name}
-              </Link>
+            {tabs.map(({ path, name }, index) => (
+              <NavLin key={index} path={path} name={name} />
             ))}
           </nav>
         </div>
@@ -42,11 +37,7 @@ export default function Footer() {
           <div className="flex space-x-4 justify-center md:justify-end">
             {/* Social Media Icons */}
             {social_media.map((social, index) => (
-              <Link
-                key={index}
-                to={social.link}
-                className="hover:text-[#D87D4A]"
-              >
+              <Link key={index} to={social.link} className="hover:bg-[#D87D4A]">
                 <img src={social.icon} alt={social.name} className="text-xl" />
               </Link>
             ))}

@@ -13,20 +13,30 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <ul className="hidden md:flex space-x-8 uppercase text-sm tracking-wide">
-          {tabs.map((tab, index) => (
+          {tabs.map(({ path, name }, index) => (
             <li key={index}>
-              <NavLink to={tab.path} className="hover:text-orange-400">
-                {tab.name}
-              </NavLink>
+              <NavLin path={path} name={name} />
             </li>
           ))}
         </ul>
-
         {/* Cart Icon */}
         <button className="text-xl">
           <img src={CartIcon} alt="icon-cart" className="h-6 md:h-8" />
         </button>
       </nav>
     </header>
+  );
+}
+
+export function NavLin({ path, name }: { path: string; name: string }) {
+  return (
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        isActive ? "text-[#D87D4A] hover:underline" : "hover:text-[#FBAF85]"
+      }
+    >
+      {name}
+    </NavLink>
   );
 }

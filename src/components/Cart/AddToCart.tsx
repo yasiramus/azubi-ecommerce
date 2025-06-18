@@ -1,16 +1,18 @@
 import { useState } from "react";
-import type { Product } from "../types/Product";
-import Button from "./ui/Button";
-import Modal from "./Cart/Modal";
+
 import { useDispatch } from "react-redux";
-import { addToCart } from "../features/cart/cartSlice";
 import { Minus, Plus } from "lucide-react";
+
+import Modal from "./CartModal";
+import Button from "../ui/Button";
+import type { Product } from "../../types/Product";
+import { addToCart } from "../../features/cart/cartSlice";
 
 interface ProductHeroProps {
   product: Product;
 }
 
-export default function ProductHero({ product }: ProductHeroProps) {
+export default function AddToCart({ product }: ProductHeroProps) {
   const dispatch = useDispatch();
 
   const [quantity, setQuantity] = useState(1);
@@ -64,27 +66,27 @@ export default function ProductHero({ product }: ProductHeroProps) {
         </span>
 
         {/* Quantity Selector & Add to Cart */}
-        <div className="flex gap-4 items-center justify-center lg:justify-start">
-          <div className="bg-[#F1F1F1] flex items-center gap-4 px-4 py-2 text-black">
+        <div className="flex gap-x-4 justify-center lg:justify-start">
+          <div className="bg-[#F1F1F1] flex items-center gap-4 py-2 text-black">
             <Button variant="transparent" onClick={() => handleQuantity("dec")}>
-              <Minus className="w-4 h-4 text-black" />
+              <Minus className="w-4 h-4 text-black/25 hover:text-[#D87D4A]" />
             </Button>
             <span className="font-medium">{quantity}</span>
             <Button variant="transparent" onClick={() => handleQuantity("inc")}>
-              <Plus className="w-4 h-4 text-black" />
+              <Plus className="w-4 h-4 text-black/25 hover:text-[#D87D4A]" />
             </Button>
           </div>
-          <div className="!px-4 !py-2">
-            <Button
-              onClick={() => {
-                handleAddToCard();
-                setOpenModal(true);
-              }}
-            >
-              Add to Cart
-            </Button>
-            {openModal && <Modal onClose={() => setOpenModal(false)} />}
-          </div>
+
+          <Button
+            onClick={() => {
+              handleAddToCard();
+              setOpenModal(true);
+            }}
+          >
+            Add to Cart
+          </Button>
+
+          {openModal && <Modal onClose={() => setOpenModal(false)} />}
         </div>
       </div>
     </section>

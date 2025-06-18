@@ -46,7 +46,7 @@ export default function ProductCard({
           {description}
         </p>
         <Link to={`/product/${slug}`}>
-          <Button className="rounded">See Product</Button>
+          <Button>See Product</Button>
         </Link>
       </div>
     </div>

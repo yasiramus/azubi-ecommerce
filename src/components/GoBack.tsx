@@ -8,7 +8,7 @@ export default function GoBack() {
     <Button
       variant="transparent"
       onClick={() => navigate(-1)}
-      className="!capitalize text-black/50 hover:underline"
+      className="!capitalize !text-black/50 hover:underline"
     >
       Go Back
     </Button>

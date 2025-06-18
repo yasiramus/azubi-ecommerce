@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import GoBack from "../components/GoBack.tsx";
 import { products } from "../data/products.ts";
 import { categories } from "../utils/index.ts";
-import ProductHero from "../components/ProductHero";
+import AddToCart from "../components/Cart/AddToCart.tsx";
 import Gallery from "../components/Gallery/Gallery.tsx";
 import InfoSection from "../components/InfoSection.tsx";
 import CategoryCard, { CardSection } from "../components/Cards.tsx";
@@ -24,7 +24,7 @@ export default function Product() {
   return (
     <main className="bg-white px-4 md:px-10 lg:px-20 py-8 space-y-20">
       <GoBack />
-      <ProductHero product={product} />
+      <AddToCart product={product} />
       <FeaturesSection
         features={product.features}
         includes={product.includes}
