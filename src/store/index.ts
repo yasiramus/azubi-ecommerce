@@ -1,14 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import cartReducer from "../features/cart/cartSlice";
+import cartReducer, { hydrateCart } from "../features/cart/cartSlice";
+import { fetchCartFromLocalStorage, persistCart } from "../middleware/persistCart";
 
 
 export const store = configureStore({
     reducer: {
         cart: cartReducer
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(persistCart)
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+// Rehydrate state from localStorage at load time
+const storedCart = fetchCartFromLocalStorage();
+if (storedCart) {
+    store.dispatch(hydrateCart(storedCart))
+}
 
+// Types 
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
