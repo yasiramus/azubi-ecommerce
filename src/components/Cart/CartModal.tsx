@@ -5,8 +5,8 @@ import { Link } from "react-router";
 import Item from "./Item";
 import Button from "../ui/Button";
 import Modal from "../ui/Modal";
-import { useAppSelector, useAppDispatch } from "../../hook";
 import { clearCart } from "../../features/cart/cartSlice";
+import { useAppSelector, useAppDispatch } from "../../hook";
 
 export default function CartModal({ onClose }: { onClose: () => void }) {
   const dispatch = useAppDispatch();

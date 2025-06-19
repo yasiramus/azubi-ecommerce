@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { CartItemProps } from "../../components/Cart/Item";
 
+import type { CartItemProps } from "../../components/Cart/Item";
 
 interface CartState {
     items: CartItemProps[];
@@ -9,6 +9,7 @@ interface CartState {
 const initialState: CartState = {
     items: [],
 };
+
 
 const cartSlice = createSlice({
     name: "cart",
@@ -39,9 +40,12 @@ const cartSlice = createSlice({
         clearCart: (state) => {
             state.items = [];
         },
+
+        //use at load time
+        hydrateCart: (state, action: PayloadAction<CartItemProps[]>) => { state.items = action.payload }
     },
 })
 
-export const { addToCart, decreaseQuantity, removeItem, clearCart } = cartSlice.actions;
+export const { addToCart, decreaseQuantity, removeItem, clearCart, hydrateCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
