@@ -1,16 +1,19 @@
-import { Link } from "react-router";
-
+import { useNavigate } from "react-router";
 import { Check } from "lucide-react";
 
 import Modal from "../ui/Modal";
 import Button from "../ui/Button";
-import { useAppSelector } from "../../hook";
+import { useAppDispatch, useAppSelector } from "../../hook";
+import { clearCart } from "../../features/cart/cartSlice";
+import { clearOrder } from "../../features/checkoutSlice";
 
 export default function OrderConfirmationModal({
   onClose,
 }: {
   onClose: () => void;
 }) {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.cart.items);
 
   if (!items.length) return null;
@@ -69,11 +72,18 @@ export default function OrderConfirmationModal({
         </div>
       </div>
 
-      <Link to="/" className="block">
-        <Button variant="primary" className="w-full">
-          Back to home
-        </Button>
-      </Link>
+      <Button
+        variant="primary"
+        className="w-full"
+        onClick={() => {
+          dispatch(clearOrder(), clearCart());
+
+          dispatch(clearCart());
+          navigate("/");
+        }}
+      >
+        Back to home
+      </Button>
     </Modal>
   );
 }

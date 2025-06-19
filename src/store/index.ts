@@ -1,12 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import cartReducer, { hydrateCart } from "../features/cart/cartSlice";
+import  checkoutReducer from "../features/checkoutSlice";
+
 import { fetchCartFromLocalStorage, persistCart } from "../middleware/persistCart";
 
 
 export const store = configureStore({
     reducer: {
-        cart: cartReducer
+        cart: cartReducer,
+        checkout:checkoutReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(persistCart)
 });

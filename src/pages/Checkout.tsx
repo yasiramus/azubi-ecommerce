@@ -1,15 +1,23 @@
-import Form, { Title } from "../components/Checkout/Form";
+import { useState } from "react";
+
+import type { RootState } from "../store";
 import GoBack from "../components/GoBack";
 import Summary from "../components/Checkout/Summary";
+import { placeOrder } from "../features/checkoutSlice";
+import { useAppDispatch, useAppSelector } from "../hook";
+import Form, { Title } from "../components/Checkout/Form";
 import RadioOption from "../components/Checkout/RadioOption";
-import { useState } from "react";
-import { validateField, type FormErrors } from "../utils/validation";
+import {
+  validateAllFields,
+  validateField,
+  type FormErrors,
+} from "../utils/validation";
 
 export default function Checkout() {
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [selected, setSelected] = useState<"e-Money" | "Cash on Delivery">(
     "e-Money"
   );
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,7 +30,12 @@ export default function Checkout() {
     emoneyPin: "",
   });
 
-  const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const dispatch = useAppDispatch();
+
+  const cartItems = useAppSelector((state: RootState) => state.cart.items);
+
+  const checkout = useAppSelector((state: RootState) => state.checkout);
+  console.log("checkout", checkout);
 
   const handleChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -32,10 +45,34 @@ export default function Checkout() {
     }));
   };
 
-  // const handleSubmit = () => {
+  const handlePlaceOrder = () => {
+    const errors = validateAllFields(formData, selected);
+    setFormErrors(errors);
 
-  // }
+    if (Object.keys(errors).length > 0) return;
 
+    if (!cartItems.length) return alert("Cart is empty");
+
+    /**variables */
+    const total = cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    const shipping = 50;
+    const vat = Math.round(total * 0.2); // Assuming 20% VAT
+    const grandTotal = total + shipping + vat;
+
+    dispatch(
+      placeOrder({
+        // id: "111",
+        items: cartItems,
+        total: grandTotal,
+        form: { ...formData, paymentMethod: selected },
+        // date: new Date().toISOString(),
+      })
+    );
+  };
 
   return (
     <section className="bg-[#F2F2F2] py-10 px-6 md:px-10">
@@ -72,7 +109,7 @@ export default function Checkout() {
                   value: formData.address,
                 },
                 { label: "ZIP Code", name: "zip", value: formData.zip },
-                { label: "City", name: "city", value: formData.name },
+                { label: "City", name: "city", value: formData.city },
                 { label: "Country", name: "country", value: formData.country },
               ]}
               onChange={handleChange}
@@ -133,7 +170,11 @@ export default function Checkout() {
           </div>
 
           {/* Summary Side */}
-          <Summary />
+          <Summary
+            handleSubmit={handlePlaceOrder}
+            formValues={formData}
+            selected={selected}
+          />
         </div>
       </div>
     </section>

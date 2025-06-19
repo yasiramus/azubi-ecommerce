@@ -1,11 +1,23 @@
+import { useState } from "react";
+
+import clsx from "clsx";
+
 import Item from "../Cart/Item";
 import Button from "../ui/Button";
 import { useAppSelector } from "../../hook";
-import clsx from "clsx";
-import { useState } from "react";
 import OrderConfirmationModal from "./OrderConfirmationModal";
+import { isFormComplete } from "../../utils/validation";
 
-export default function Summary() {
+export default function Summary({
+  handleSubmit,
+  formValues,
+  selected,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  formValues: any;
+  selected: "e-Money" | "Cash on Delivery";
+  handleSubmit: () => void;
+}) {
   const items = useAppSelector((state) => state.cart.items);
 
   const total = items.reduce(
@@ -19,6 +31,7 @@ export default function Summary() {
 
   const [openOrderModal, setShowOrderModal] = useState(false);
 
+  const isComplete = isFormComplete(formValues, selected);
   return (
     <aside className="h-fit bg-white rounded-lg p-6 sm:p-8 space-y-6 shadow-lg w-full max-w-md mx-auto">
       <h2 className="text-lg font-bold uppercase tracking-wide text-black">
@@ -27,7 +40,7 @@ export default function Summary() {
 
       <div className="space-y-4 max-h-64 overflow-y-auto pr-1 scroll-smooth">
         {items.map((item) => (
-          <Item key={item.id} {...item} checkout={true}/>
+          <Item key={item.id} {...item} checkout={true} />
         ))}
       </div>
 
@@ -38,10 +51,25 @@ export default function Summary() {
         <SummaryRow label="Grand Total" value={grandTotal} isAccent />
       </div>
 
-      <Button variant="primary" className="w-full" onClick={() => setShowOrderModal(true)}>
+      <Button
+        variant="primary"
+        className={clsx(
+          "w-full",
+          !isComplete
+            ? "bg-[#fbaf85] hover:cursor-not-allowed"
+            : "bg-[#D87D4A] hover:bg-[#fbaf85]"
+        )}
+        disabled={!isComplete}
+        onClick={() => {
+          setShowOrderModal(true);
+          handleSubmit();
+        }}
+      >
         Continue & Pay
       </Button>
-      {openOrderModal&& <OrderConfirmationModal onClose={()=> setShowOrderModal(false)}/>}
+      {openOrderModal && (
+        <OrderConfirmationModal onClose={() => setShowOrderModal(false)} />
+      )}
     </aside>
   );
 }
