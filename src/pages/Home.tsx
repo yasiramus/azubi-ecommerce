@@ -4,8 +4,11 @@ import Button from "../components/ui/Button";
 import PromoCard from "../components/PromoCard";
 import InfoSection from "../components/InfoSection";
 import CategoryCard, { CardSection } from "../components/Cards";
+import { useNavigate } from "react-router";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Hero />
@@ -41,7 +44,12 @@ export default function Home() {
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>
-                <Button variant="secondary">See Product</Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => navigate("/product/zx9-speaker")}
+                >
+                  See Product
+                </Button>
               </div>
             </div>
           </div>
@@ -52,6 +60,7 @@ export default function Home() {
               title="ZX7 SPEAKER"
               image="/assets/home/desktop/image-speaker-zx7.jpg"
               isBackgroundImage
+              onClick={() => navigate("/product/zx7-speaker")}
             />
 
             <PromoCard
@@ -59,6 +68,7 @@ export default function Home() {
               image="/assets/home/desktop/image-earphones-yx1.jpg"
               className="gap-x-6"
               backgroundColor="bg-none"
+              onClick={() => navigate("/product/yx1-earphones")}
             />
             <InfoSection />
           </div>

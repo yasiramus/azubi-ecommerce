@@ -11,56 +11,70 @@ This is a multi-page e-commerce frontend application built as part of the **Azub
 - **React + Vite** – Fast frontend setup and modular architecture
 - **Tailwind CSS** – Utility-first styling and responsive design
 - **React Router** – Multi-page routing
-- **Redux ToolKit** – Global state management for cart
+- **Redux ToolKit** – Global state management for cart and checkout
 - **LocalStorage** – Persist cart across sessions
-- **React Hook Form** – Form validation
-- **Framer Motion** (optional) – Smooth transitions and animations
+- **Lucide Icons** – Svg Icons
+  <!-- - **React Hook Form** – Form validation -->
+  <!-- - **Framer Motion** (optional) – Smooth transitions and animations -->
 
 ---
 
 ## 📁 Folder Structure
 
 ```bash
+public/                    # Static assets(images)
 src/
 ├── assets/                # Static assets (images, logos)
 ├── components/            # UI components (buttons, modals, cards)
-├── store/                 #store for global state
+├── store/                 # Store for global state
 ├── data/                  # data.json file for product mock data
+├── features/              # Features global slice
+├── types/                 # Interface declaration
 ├── hooks/                 # Custom hooks
-├── pages/                 # Home, Cart, Checkout, Confirmation
-├── utils/                 # Helper functions (VAT, shipping calculations)
+├── routes/                # Routes path
+├── layouts/               # Layout definition
+├── middleware/            # global middleware to local
+├── pages/                 # Home, Category, Checkout, Product
+├── utils/                 # Helper functions (VAT, shipping calculations, Validation)
 ├── App.tsx                # Application shell
 └── main.tsx               # Vite entry point
+```
+
 ---
 
 ## 🛠️ Features Implemented
 
-* ✅ Fully responsive layout for all screen sizes
-* ✅ Add, remove, and update items in the cart
-* ✅ Real-time cart total updates
-* ✅ Form validation on checkout (with visual error handling)
-* ✅ Fixed shipping cost of `$50`
-* ✅ VAT calculated at 20% of product total
-* ✅ Confirmation modal with order summary
-* ✅ **Cart state persists after page refresh** 🎉
+- ✅ Fully responsive layout for all screen sizes
+- ✅ Add, remove, and update items in the cart
+- ✅ Real-time cart total updates
+- ✅ Form validation on checkout (with visual error handling)
+- ✅ Fixed shipping cost of `$50`
+- ✅ VAT calculated at 20% of product total
+- ✅ Confirmation modal with order summary
+- ✅ **Cart state persists after page refresh** 🎉
 
 ---
 
 ## 📷 Screenshots
 
-> 📸 Add screenshots or a Loom walkthrough here.
+Here’s a preview of the homepage:
+![Home Preview](./src//assets//Home.png)
+![Headphone](./src/assets/headphone.png)
+![Checkout](./src/assets/checkout.png)
+![Cart](./src/assets/cart.png)
+![Order](./src/assets/order.png)
 
 ---
 
 ## 🌐 Live Demo
 
-👉 [View Live Site Here](https://your-deployment-url.vercel.app)
+👉 [View Live Site Here](https://azubi-ecommerce-gamma.vercel.app/)
 
 ---
 
 ## 📎 GitHub Repository
 
-👉 [View Codebase on GitHub](https://github.com/YOUR_GITHUB_USERNAME/ecommerce-app)
+👉 [View Codebase on GitHub](https://github.com/yasiramus/azubi-ecommerce.git)
 
 ---
 
@@ -68,7 +82,7 @@ src/
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_GITHUB_USERNAME/ecommerce-app.git
+git clone https://github.com/yasiramus/azubi-ecommerce.git
 
 # Navigate into the project
 cd ecommerce-app
@@ -84,9 +98,9 @@ pnpm run dev
 
 ## 📬 Submission Info
 
-* **Email**: [your.email@example.com](mailto:your.email@example.com)
-* **Hosted App**: \[Vercel Link]
-* **GitHub Repo**: \[GitHub Link]
+- **Email**: [your.email@example.com](mailto:yasiratumusah@gmail.com)
+- **Hosted App**: \[[Vercel Link](https://azubi-ecommerce-gamma.vercel.app/)]
+- **GitHub Repo**: \[[GitHub Link](https://github.com/yasiramus/azubi-ecommerce.git)]
 
 ---
 

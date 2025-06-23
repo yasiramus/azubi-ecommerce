@@ -1,7 +1,5 @@
 import clsx from "clsx";
 
-import Photo from "../assets/shared/desktop/image-best-gear.jpg";
-
 export default function InfoSection({ reverse }: { reverse?: false }) {
   return (
     <section
@@ -13,9 +11,8 @@ export default function InfoSection({ reverse }: { reverse?: false }) {
       {/* Text Content */}
       <div className="w-full text-center md:text-left px-6 md:px-8 animate-fadeInUp">
         <h2 className="text-h2 md:text-h2 font-bold uppercase leading-tight text-black">
-          Bringing you the {" "}<br/>
-          <span className="text-[#D87D4A]">best</span> audio
-          gear
+          Bringing you the <br />
+          <span className="text-[#D87D4A]">best</span> audio gear
         </h2>
         <p className="mt-6 max-w-md mx-auto md:mx-0 text-black text-base md:text-body">
           Located at the heart of New York City, Audiophile is the premier store
@@ -30,7 +27,7 @@ export default function InfoSection({ reverse }: { reverse?: false }) {
       {/* Image */}
       <div className="w-full">
         <img
-          src={Photo}
+          src={"/assets/shared/desktop/image-best-gear.jpg"}
           alt={"Best Audio Gear"}
           className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg animate"
         />

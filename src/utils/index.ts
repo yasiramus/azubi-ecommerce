@@ -1,9 +1,9 @@
-import Twitter from "../assets/shared/desktop/icon-twitter.svg";
-import Facebook from "../assets/shared/desktop/icon-facebook.svg";
-import Instagram from "../assets/shared/desktop/icon-instagram.svg";
-import Speakers from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import Earphones from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import Headphones from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
+import Twitter from "/assets/shared/desktop/icon-twitter.svg";
+import Facebook from "/assets/shared/desktop/icon-facebook.svg";
+import Instagram from "/assets/shared/desktop/icon-instagram.svg";
+import Speakers from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import Earphones from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
+import Headphones from "/assets/shared/desktop/image-category-thumbnail-headphones.png";
 
 export const tabs = [
   { name: "Home", path: "/" },

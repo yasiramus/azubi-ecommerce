@@ -1,5 +1,6 @@
-import Button from "./ui/Button";
 import clsx from "clsx";
+
+import Button from "./ui/Button";
 
 interface PromoCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface PromoCardProps {
   backgroundColor?: string;
   isBackgroundImage?: boolean;
   className?: string;
+  onClick:()=> void
 }
 
 export default function PromoCard({
@@ -21,6 +23,7 @@ export default function PromoCard({
   backgroundColor = "#F1F1F1",
   isBackgroundImage = false,
   className,
+  onClick
 }: PromoCardProps) {
   const alignment =
     align === "center"
@@ -63,7 +66,7 @@ export default function PromoCard({
           <h1 className="text-h4 md:text-6xl font-bold leading-tight uppercase text-black">
             {title}
           </h1>
-          <Button variant={buttonVariant}>{buttonText}</Button>
+          <Button variant={buttonVariant} onClick={onClick}>{buttonText}</Button>
         </div>
       </div>
     </div>
