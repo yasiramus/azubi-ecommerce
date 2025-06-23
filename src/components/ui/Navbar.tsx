@@ -1,16 +1,19 @@
 import { useState } from "react";
 
-import { NavLink, useNavigate } from "react-router";
 import { Menu, X } from "lucide-react";
+import { NavLink, useNavigate } from "react-router";
 
 import Logo from "./Logo";
 import Button from "./Button";
 import { tabs } from "../../utils";
+import { useAppSelector } from "../../hook";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
 
   const navigate = useNavigate();
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     // <header className=" text-white px-6 md:px-10 py-6">
@@ -37,12 +40,27 @@ export default function Navbar() {
           ))}
         </ul>
         {/* Cart Icon */}
-        <Button variant="outline" onClick={() => navigate("/checkout")}>
+        <Button
+          variant="outline"
+          onClick={() => navigate("/checkout")}
+          className="relative"
+        >
           <img
             src={"/assets/shared/desktop/icon-cart.svg"}
             alt="icon-cart"
             className="h-6 md:h-8"
           />
+          {totalQuantity > 0 && (
+            <span
+              className="absolute top-0 right-1 md:-right-1 md:-top-1 bg-[#D87D4A] hover:bg-[#fbaf85] text-white font-semibold rounded-full
+                 flex items-center justify-center
+                 h-4 w-4 text-[10px]
+                 md:h-5 md:w-5 md:text-[11px]
+                 lg:h-6 lg:w-6 lg:text-xs"
+            >
+              {totalQuantity}
+            </span>
+          )}
         </Button>
       </nav>
 

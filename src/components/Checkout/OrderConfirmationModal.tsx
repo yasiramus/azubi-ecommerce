@@ -36,7 +36,7 @@ export default function OrderConfirmationModal({
         <Check className="text-white w-6 h-6" />
       </div>
 
-      <h2 className="text-2xl font-bold leading-tight">
+      <h2 className="text-2xl font-bold leading-tight uppercase">
         Thank you <br /> for your order
       </h2>
       <p className="text-gray-500 text-sm">
