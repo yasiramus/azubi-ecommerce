@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { useDispatch } from "react-redux";
 import { Minus, Plus } from "lucide-react";
 
 import Modal from "./CartModal";
 import Button from "../ui/Button";
+import { useAppDispatch } from "../../hook";
 import type { Product } from "../../types/Product";
 import { addToCart } from "../../features/cart/cartSlice";
 
@@ -13,7 +13,7 @@ interface ProductHeroProps {
 }
 
 export default function AddToCart({ product }: ProductHeroProps) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [quantity, setQuantity] = useState(1);
   const [openModal, setOpenModal] = useState(false);

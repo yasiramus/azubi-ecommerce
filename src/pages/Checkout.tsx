@@ -34,9 +34,6 @@ export default function Checkout() {
 
   const cartItems = useAppSelector((state: RootState) => state.cart.items);
 
-  const checkout = useAppSelector((state: RootState) => state.checkout);
-  console.log("checkout", checkout);
-
   const handleChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
     setFormErrors((prevErr) => ({
