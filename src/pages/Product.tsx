@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 
-import GoBack from "../components/GoBack.tsx";
+import GoBack from "../components/ui/GoBack.tsx";
 import { products } from "../data/products.ts";
 import { categories } from "../utils/index.ts";
 import AddToCart from "../components/Cart/AddToCart.tsx";

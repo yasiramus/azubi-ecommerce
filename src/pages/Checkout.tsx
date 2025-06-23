@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import type { RootState } from "../store";
-import GoBack from "../components/GoBack";
+import GoBack from "../components/ui/GoBack";
 import Summary from "../components/Checkout/Summary";
 import { placeOrder } from "../features/checkoutSlice";
 import { useAppDispatch, useAppSelector } from "../hook";

@@ -1,4 +1,3 @@
-// On checkout, store order data
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 import type { CartItemProps } from "../components/Cart/Item";

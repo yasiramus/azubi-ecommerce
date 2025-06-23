@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 import Button from "./ui/Button";
 
 export default function Hero() {
@@ -21,6 +23,7 @@ export default function Hero() {
 }
 
 export function Content() {
+  const navigate = useNavigate();
   return (
     <div className="text-center md:text-left space-y-6">
       <p className="text-gray-400 tracking-[10px] text-sm">NEW PRODUCT</p>
@@ -32,7 +35,10 @@ export function Content() {
         Experience natural, life like audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
-      <Button> See Product</Button>
+      <Button onClick={() => navigate("/product/xx99-mark-two-headphones")}>
+        {" "}
+        See Product
+      </Button>
     </div>
   );
 }
