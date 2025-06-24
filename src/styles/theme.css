@@ -4,8 +4,8 @@
   --font-manrope: "Manrope", "sans-serif";
 
   /* --color-*: initial; */
-  --color-primary: "#D87D4A";
-  --color-primary-soft: "#FBAF85";
+  /* --color-primary: "#D87D4A"; */
+  /* --color-primary-soft: "#FBAF85"; */
   /* --color-black: "#000000"; */
   --color-dark: "#101010";
   --color-lightGray: "#F1F1F1";
@@ -48,3 +48,6 @@
   --text-sub--line-height: 25px;
   --text-sub--tracking: 1px;
 }
+
+
+/* not in use  */

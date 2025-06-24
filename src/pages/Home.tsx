@@ -1,10 +1,11 @@
+import { useNavigate } from "react-router";
+
 import { categories } from "../utils";
 import Hero from "../components/Hero";
 import Button from "../components/ui/Button";
 import PromoCard from "../components/PromoCard";
 import InfoSection from "../components/InfoSection";
 import CategoryCard, { CardSection } from "../components/Cards";
-import { useNavigate } from "react-router";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -25,13 +26,13 @@ export default function Home() {
             ))}
           </CardSection>
 
-          <div className=" bg-[#D87D4A] max-h-1/2 rounded-lg px-6 pt-16 ">
+          <div className=" bg-primary max-h-1/2 rounded-lg px-6 pt-16 ">
             <div className="mx-auto px-8 w-full bg-[url(assets/home/desktop/pattern-circles.svg)] flex items-center gap-x-4  h-full bg-no-repeat">
               <div className="w-1/2 h-auto ">
                 <img
                   src="/assets/home/desktop/image-speaker-zx9.png"
                   alt="speaker"
-                  className="h-[400px] object-cover"
+                  className="h-100 object-cover"
                 />
               </div>
 

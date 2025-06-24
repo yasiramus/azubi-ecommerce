@@ -36,7 +36,7 @@ export default function PromoCard({
     <div
       className={clsx(
         className,
-        "w-full h-[320px] rounded-lg overflow-hidden relative flex",
+        "w-full h-80 rounded-lg overflow-hidden relative flex",
         isBackgroundImage ? "" : "bg-cover bg-no-repeat"
       )}
       style={{

@@ -17,7 +17,7 @@ export default function Product() {
 
   if (!product) {
     return (
-      <div className="text-center text-red-600 py-10">Product not found.</div>
+      <div className="text-center text-error py-10">Product not found.</div>
     );
   }
 

@@ -57,7 +57,7 @@ export default function CartModal({ onClose }: { onClose: () => void }) {
         </div>
 
         <Link to="/checkout">
-          <Button variant="primary" className="w-full">
+          <Button  className="w-full">
             Checkout
           </Button>
         </Link>

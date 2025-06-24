@@ -16,7 +16,7 @@ interface Props {
 
 export default function CategoryCard({ name, slug, image }: Props) {
   return (
-    <div className="bg-[#f2f2f2] rounded-lg text-center px-6 pt-16 pb-8 relative overflow-visible">
+    <div className="bg-light-gray rounded-lg text-center px-6 pt-16 pb-8 relative overflow-visible">
       <img
         src={image}
         alt={name}
@@ -29,7 +29,7 @@ export default function CategoryCard({ name, slug, image }: Props) {
 
       <Link
         to={`/${slug}`}
-        className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-black/50 hover:text-[#FBAF85] transition"
+        className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-black/50 hover:text-primary-soft transition"
       >
         <span>Shop</span>
         <img

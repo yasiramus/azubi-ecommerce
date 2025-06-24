@@ -26,7 +26,7 @@ export default function ProductCard({
         reverse ? "lg:flex-row-reverse" : ""
       } gap-10 lg:gap-24 py-16`}
     >
-      <div className="bg-[#f2f2f2] rounded-lg w-full lg:w-1/2 p-6 flex justify-center">
+      <div className="bg-light-gray rounded-lg w-full lg:w-1/2 p-6 flex justify-center">
         <img
           src={categoryImage.desktop}
           alt={name}
@@ -35,11 +35,12 @@ export default function ProductCard({
       </div>
       <div className="text-center lg:text-left w-full lg:w-1/2 px-4">
         {isNew && (
-          <p className="text-sm text-[#D87D4A] uppercase tracking-[10px] mb-6 ">
+          <p className="text-sm text-primary uppercase tracking-widest mb-6 ">
             New Product
           </p>
+          
         )}
-        <h2 className="text-black text-h2 font-bold sm:text-h2 uppercase mb-4">
+        <h2 className="text-black text-h2 font-bold sm:text-h2 uppercase mb-4 ">
           {name}
         </h2>
         <p className="text-gray-600 mb-6 text-sm sm:text-base leading-relaxed">

@@ -31,7 +31,7 @@ export function Content() {
         XX99 Mark II
         <br /> Headphones
       </h1>
-      <p className="text-gray-300 max-w-md mx-auto md:mx-0">
+      <p className="text-light-gray max-w-md mx-auto md:mx-0">
         Experience natural, life like audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
