@@ -32,7 +32,7 @@ export default function Home() {
                 <img
                   src="/assets/home/desktop/image-speaker-zx9.png"
                   alt="speaker"
-                  className="h-100 object-cover"
+                  className="h-[400px] object-cover"
                 />
               </div>
 
