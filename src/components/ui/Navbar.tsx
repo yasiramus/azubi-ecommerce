@@ -52,9 +52,9 @@ export default function Navbar() {
           />
           {totalQuantity > 0 && (
             <span
-              className="absolute top-0 right-1 md:-right-1 md:-top-1 bg-[#D87D4A] hover:bg-[#fbaf85] text-white font-semibold rounded-full
+              className="absolute top-0 right-1 md:-right-1 md:-top-1 bg-primary hover:bg-primary-soft text-white font-semibold rounded-full
                  flex items-center justify-center
-                 h-4 w-4 text-[10px]
+                 h-4 w-4 text-xs
                  md:h-5 md:w-5 md:text-[11px]
                  lg:h-6 lg:w-6 lg:text-xs"
             >
@@ -95,7 +95,7 @@ export function NavLin({
       to={path}
       onClick={onClick}
       className={({ isActive }) =>
-        isActive ? "text-[#D87D4A] hover:underline" : "hover:text-[#FBAF85]"
+        isActive ? "text-primary hover:underline" : "hover:text-primary-soft"
       }
     >
       {name}

@@ -72,7 +72,7 @@ export default function Checkout() {
   };
 
   return (
-    <section className="bg-[#F2F2F2] py-10 px-6 md:px-10">
+    <section className="bg-light-gray py-10 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <GoBack />
         <div className="flex flex-col lg:flex-row gap-10">

@@ -6,7 +6,7 @@ import { tabs, social_media } from "../../utils";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#101010] text-white px-6 md:px-24 py-12 text-center md:text-left">
+    <footer className="bg-dark text-white px-6 md:px-24 py-12 text-center md:text-left">
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Logo + Nav */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
 
         {/* Description */}
-        <p className="text-sm text-white/75 max-w-xl leading-relaxed">
+        <p className="text-sm text-light-gray max-w-xl leading-relaxed">
           Audiophile is an all-in-one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to
           helping you get the most out of personal audio. Come and visit our
@@ -29,14 +29,14 @@ export default function Footer() {
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
-          <p className="text-sm text-white/50">
+          <p className="text-sm text-light-gray">
             Copyright 2021. All Rights Reserved
           </p>
 
           <div className="flex space-x-4 justify-center md:justify-end">
             {/* Social Media Icons */}
             {social_media.map((social, index) => (
-              <Link key={index} to={social.link} className="hover:bg-[#D87D4A]">
+              <Link key={index} to={social.link} className="hover:bg-primary">
                 <img src={social.icon} alt={social.name} className="text-xl" />
               </Link>
             ))}

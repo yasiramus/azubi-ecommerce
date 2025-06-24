@@ -12,7 +12,7 @@ export default function InfoSection({ reverse }: { reverse?: false }) {
       <div className="w-full text-center md:text-left px-6 md:px-8 animate-fadeInUp">
         <h2 className="text-h2 md:text-h2 font-bold uppercase leading-tight text-black">
           Bringing you the <br />
-          <span className="text-[#D87D4A]">best</span> audio gear
+          <span className="text-primary">best</span> audio gear
         </h2>
         <p className="mt-6 max-w-md mx-auto md:mx-0 text-black text-base md:text-body">
           Located at the heart of New York City, Audiophile is the premier store
@@ -29,7 +29,7 @@ export default function InfoSection({ reverse }: { reverse?: false }) {
         <img
           src={"/assets/shared/desktop/image-best-gear.jpg"}
           alt={"Best Audio Gear"}
-          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg animate"
+          className="w-full h-75 md:h-100 lg:h-125 object-cover rounded-lg animate"
         />
       </div>
     </section>

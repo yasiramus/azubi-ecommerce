@@ -1,6 +1,6 @@
-import clsx from "clsx";
-
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+
+import clsx from "clsx";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "dark" | "transparent" | "danger"|"outline";
@@ -18,13 +18,13 @@ export default function Button({
     "text-white cursor-pointer px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors duration-300";
 
   const variantStyles = {
-    primary: "bg-[#D87D4A] hover:bg-[#fbaf85]",
+    primary: "bg-primary hover:bg-primary-soft",
     secondary: "bg-black hover:bg-[#4c4c4c]",
     dark: "bg-transparent !text-black border border-black hover:bg-black hover:!text-white",
     transparent:
       "!font-bold bg-transparent text-black/25 hover:bg-[#f2f2f2] hover:text-black",
-    danger: "bg-[#CD2C2C]",
-    outline:"!font-medium !text-gray-500 underline hover:!text-[#D87D4A] !capitalize"
+    danger: "bg-error hover:bg-error/75",
+    outline:"!font-medium !text-gray-500 underline hover:!text-primary !capitalize"
   };
 
   return (
