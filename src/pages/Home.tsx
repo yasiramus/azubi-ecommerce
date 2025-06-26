@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="bg-white p-4 w-full px-4 md:px-10 lg:px-20 py-16">
+      <section className="bg-white p-4 w-full px-4 md:px-10 lg:px-20 py-16 h-full">
         <div className="flex flex-col gap-y-8">
           <CardSection>
             {categories.map((category) => (
@@ -25,10 +25,9 @@ export default function Home() {
               />
             ))}
           </CardSection>
-
-
-          <div className=" bg-primary max-h-1/2 rounded-lg px-6 pt-16 ">
-            <div className="mx-auto px-8 w-full bg-[url(/assets/home/desktop/pattern-circles.svg)] flex items-center gap-x-4  h-full bg-no-repeat">
+          {/* ps-6 pe-8 */}
+          <div className=" bg-primary h-1/2 rounded-lg">
+            <div className="mx-auto px-10 w-full bg-[url(/pattern-group.png)] flex items-center gap-x-4 bg-no-repeat bg-contain h-auto pt-16">
               <div className="w-1/2 h-auto ">
                 <img
                   src="/assets/home/desktop/image-speaker-zx9.png"
@@ -42,7 +41,7 @@ export default function Home() {
                   ZX9
                   <br /> SPEAKER
                 </h1>
-                <p className="text-body text-gray-300 max-w-md mx-auto md:mx-0">
+                <p className="text-body text-gray-300 max-w-md mx-auto md:mx-0 text-pretty">
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>
@@ -55,7 +54,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           <div className="flex flex-col gap-y-8">
             {/*ZX7 with background image */}
             <PromoCard
