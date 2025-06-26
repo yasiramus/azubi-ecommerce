@@ -27,7 +27,7 @@ export default function Home() {
           </CardSection>
 
 
-          <div className=" bg-[#D87D4A] max-h-1/2 rounded-lg px-6 pt-16 ">
+          <div className=" bg-primary max-h-1/2 rounded-lg px-6 pt-16 ">
             <div className="mx-auto px-8 w-full bg-[url(/assets/home/desktop/pattern-circles.svg)] flex items-center gap-x-4  h-full bg-no-repeat">
               <div className="w-1/2 h-auto ">
                 <img
