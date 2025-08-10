@@ -51,7 +51,7 @@ src/
 - ✅ Fixed shipping cost of `$50`
 - ✅ VAT calculated at 20% of product total
 - ✅ Confirmation modal with order summary
-- ✅ **Cart state persists after page refresh** 🎉
+- ✅ Cart state persists after page refresh
 
 ---
 
@@ -106,6 +106,6 @@ pnpm run dev
 
 ## 🏁 Final Notes
 
-This project was built with care and focus to meet the assessment requirements and showcase my frontend skills in a practical, user-friendly, and scalable way. Looking forward to the next phase of the Azubi Talent Mobility journey! 💼✨
+This project was built with care and focus to meet the assessment requirements and showcase my frontend skills in a practical, user-friendly, and scalable way.
 
 <!-- yasira -->
